@@ -5,6 +5,8 @@
 #include <sys/time.h>
 #define NUM 60
  
+//gcc snake.c -lcurses -o snake
+
 struct direct                //用来表示方向的
 {
     int cx;
