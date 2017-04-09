@@ -12,14 +12,31 @@ int test1()
 	printf("Input is %s\n... ...\n", hungary_test);
 	char * result = Hungary2DownLine(hungary_test);
 	printf("Mission completed :\nresult is %s \n", result);
-	if(strcmp(anticipated_test, result) == 0)	return 1;
+	if(strcmp(anticipated_test, result) == 0){
+		// 缺陷： 函数内部回开辟内存空间  必须在函数外部进行释放
+		free(result);
+		return 1;
+	}	
 	else	return 0;
 }
 
-// int test2()
-// {
-// 	return 0;
-// }
+int test2()
+{
+	char * hungary_test = "aaa_bbCccDdd";
+	char * anticipated_test = "aaa_bb_ccc_ddd";
+	printf("Input is %s\n... ...\n", hungary_test);
+	char * result = (char *)malloc(strlen(hungary_test) * 2);
+	memset(result, 0, strlen(hungary_test) * 2);
+
+	Hungary2DownLineX(hungary_test, &result);
+
+	printf("Mission completed :\nresult is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		free(result);
+		return 1;
+	}
+	else	return 0;
+}
 
 // int test3()
 // {
@@ -59,7 +76,7 @@ int test1()
 int main()
 {
 	if(test1()) printf("********************\ntest1 successed\n********************\n");
-	// if(test2()) printf("test2 successed\n");
+	if(test2()) printf("********************\ntest2 successed\n********************\n");
 	// if(test3()) printf("test3 successed\n");
 	// if(test4()) printf("test4 successed\n");
 	// if(test5()) printf("test5 successed\n");
