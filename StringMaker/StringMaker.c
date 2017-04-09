@@ -152,7 +152,7 @@ char *Hungary2Pascal(const char *src)
 }
 
 //匈牙利型转帕斯卡增强型
-int Hungary2PascalX(const char *src, char **dst)
+int Hungary2PascalX(const char *src, char **dst) 
 {
 	// char * hungary_test = "aaa_bbCccDdd";
 	if(src == NULL || dst == NULL)
@@ -178,7 +178,6 @@ int Hungary2PascalX(const char *src, char **dst)
 	}
 	dstx[index] = '\0';
 	return 0;
-
 }
 
 // //下划线型转匈牙利型
