@@ -5,22 +5,22 @@
 
 
 //匈牙利型转下划线型
-char *Hungary2DownLine(const char *str)
+char *Hungary2DownLine(const char *src)
 {
 	// char * hungary_test = "aaa_bbCccDdd";
-	if(str == NULL)
+	if(src == NULL)
 	{
-		printf("str == NULL\n");
+		printf("src == NULL\n");
 		return NULL;
 	}
 	int index = 0;
-	int length = strlen(str);
+	int length = strlen(src);
 	char *dst = (char *)malloc(length * 2);
 	memset(dst, 0, length * 2);
 	
 	for(int i=0; i < length; i++)
 	{
-		char c = str[i];
+		char c = src[i];
 		if(c >= 'A' && c <= 'Z')
 		{
 			dst[index] = '_';
@@ -63,17 +63,62 @@ int Hungary2DownLineX(const char *src, char **dst)
 	return 0;
 }
 
-// //匈牙利型转驼峰型
-// char *Hungary2Camelback(const char *str)
-// {
+//匈牙利型转驼峰型
+char *Hungary2Camelback(const char *src)
+{
+	// char * hungary_test = "aaa_bbCccDdd";
+	if(src == NULL)
+	{
+		printf("src == NULL\n");
+		return NULL;
+	}
+	int index = 0;
+	int length = strlen(src);
+	char *dst = (char *)malloc(length * 2);
+	memset(dst, 0, length * 2);
+	
+	for(int i=0; i < length; i++)
+	{
+		char c = src[i];
+		if(c == '_')
+		{
+			i ++;
+			c = src[i] - 32;
+		}
+		dst[index] = c;
+		index ++;
+	}
+	dst[index] = '\0';
+	return dst;
+}
 
-// }
-
-// //匈牙利型转驼峰增强型
-// int Hungary2CamelBackX(const char *src, char **dst)
-// {
-
-// }
+//匈牙利型转驼峰增强型
+int Hungary2CamelbackX(const char *src, char **dst)
+{
+	// char * hungary_test = "aaa_bbCccDdd";
+	if(src == NULL || dst == NULL)
+	{
+		printf("src == NULL || dst == NULL\n");
+		return -1;
+	}
+	int index = 0;
+	int length = strlen(src);
+	char *dstx = *dst;
+	
+	for(int i=0; i < length; i++)
+	{
+		char c = src[i];
+		if(c == '_')
+		{
+			i ++;
+			c = src[i] - 32;
+		}
+		dstx[index] = c;
+		index ++;
+	}
+	dstx[index] = '\0';
+	return 0;
+}
 
 // //匈牙利型转帕斯卡型
 // char *Hungary2Pascal(const char *str)

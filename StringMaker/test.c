@@ -38,15 +38,38 @@ int test2()
 	else	return 0;
 }
 
-// int test3()
-// {
-// 	return 0;
-// }
+int test3()
+{
+	char * hungary_test = "aaa_bbCccDdd";
+	char * anticipated_test = "aaaBbCccDdd";
+	printf("Input is %s\n... ...\n", hungary_test);
+	char * result = Hungary2Camelback(hungary_test);
+	printf("Mission completed :\nresult is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		// 缺陷： 函数内部回开辟内存空间  必须在函数外部进行释放
+		free(result);
+		return 1;
+	}	
+	else	return 0;
+}
 
-// int test4()
-// {
-// 	return 0;
-// }
+int test4()
+{
+	char * hungary_test = "aaa_bbCccDdd";
+	char * anticipated_test = "aaaBbCccDdd";
+	printf("Input is %s\n... ...\n", hungary_test);
+	char * result = (char *)malloc(strlen(hungary_test) * 2);
+	memset(result, 0, strlen(hungary_test) * 2);
+
+	Hungary2CamelbackX(hungary_test, &result);
+
+	printf("Mission completed :\nresult is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		free(result);
+		return 1;
+	}
+	else	return 0;
+}
 
 // int test5()
 // {
@@ -77,8 +100,8 @@ int main()
 {
 	if(test1()) printf("********************\ntest1 successed\n********************\n");
 	if(test2()) printf("********************\ntest2 successed\n********************\n");
-	// if(test3()) printf("test3 successed\n");
-	// if(test4()) printf("test4 successed\n");
+	if(test3()) printf("********************\ntest3 successed\n********************\n");
+	if(test4()) printf("********************\ntest4 successed\n********************\n");
 	// if(test5()) printf("test5 successed\n");
 	// if(test6()) printf("test6 successed\n");
 	// if(test7()) printf("test7 successed\n");
