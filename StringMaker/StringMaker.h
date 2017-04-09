@@ -9,8 +9,8 @@
 //匈牙利型转下划线型
 char *Hungary2DownLine(const char *str);
 
-// //匈牙利型转下划线增强型
-// int Hungary2DownLineX(const char *src, char **dst);
+//匈牙利型转下划线增强型
+int Hungary2DownLineX(const char *src, char **dst);
 
 // //匈牙利型转驼峰型
 // char *Hungary2Camelback(const char *str);
