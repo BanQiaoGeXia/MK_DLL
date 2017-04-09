@@ -18,11 +18,11 @@ char *Hungary2Camelback(const char *src);
 //匈牙利型转驼峰增强型
 int Hungary2CamelbackX(const char *src, char **dst);
 
-// //匈牙利型转帕斯卡型
-// char *Hungary2Pascal(const char *str);
+//匈牙利型转帕斯卡型
+char *Hungary2Pascal(const char *str);
 
-// //匈牙利型转帕斯卡增强型
-// int Hungary2PascalX(const char *src, char **dst);
+//匈牙利型转帕斯卡增强型
+int Hungary2PascalX(const char *src, char **dst);
 
 // //下划线型转匈牙利型
 // char *DownLine2Hungary(const char *str);
