@@ -105,20 +105,41 @@ int test6()
 	else	return 0;
 }
 
-// int test7()
-// {
-// 	return 0;
-// }
+int test7()
+{
+	char * downline_test = "aaa_bb_ccc_ddd";
+	char * anticipated_test = "aaa_bbCccDdd";
+	printf("Input is %s\n", downline_test);
+	char * result = DownLine2Hungary(downline_test);
+	printf("result is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		// 缺陷： 函数内部回开辟内存空间  必须在函数外部进行释放
+		free(result);
+		return 1;
+	}	
+	else	return 0;
+	return 0;
+	return 0;
+}
 
-// int test8()
-// {
-// 	return 0;
-// }
+int test8()
+{
+	char * hungary_test = "aaa_bb_ccc_ddd";
+	char * anticipated_test = "aaa_bbCccDdd";
+	printf("Input is %s\n", hungary_test);
+	char * result = (char *)malloc(strlen(hungary_test) * 2);
+	memset(result, 0, strlen(hungary_test) * 2);
 
-// int test9()
-// {
-// 	return 0;
-// }
+	DownLine2HungaryX(hungary_test, &result);
+
+	printf("result is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		free(result);
+		return 1;
+	}
+	else	return 0;
+	return 0;
+}
 
 int main()
 {
@@ -128,11 +149,11 @@ int main()
 	if(test4()) printf("test4 successed\n********************\n\n");
 	if(test5()) printf("test5 successed\n********************\n\n");
 	if(test6()) printf("test6 successed\n********************\n\n");
-	// if(test7()) printf("********************\ntest7 successed\n********************\n");
-	// if(test8()) printf("********************\ntest8 successed\n********************\n");
-	// if(test9()) printf("********************\ntest9 successed\n********************\n");
-	// if(test10()) printf("********************\ntest10 successed\n********************\n");
-	// if(test11()) printf("********************\ntest11 successed\n********************\n");
-	// if(test12()) printf("********************\ntest12 successed\n********************\n");
+	if(test7()) printf("test7 successed\n********************\n\n");
+	if(test8()) printf("test8 successed\n********************\n\n");
+	// if(test9()) printf("test9 successed\n********************\n\n");
+	// if(test10()) printf("test10 successed\n********************\n\n");
+	// if(test11()) printf("test11 successed\n********************\n\n");
+	// if(test12()) printf("test12 successed\n********************\n\n");
 	return 0;
 }
