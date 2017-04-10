@@ -246,29 +246,123 @@ int DownLine2HungaryX(const char *src, char **dst)
 	return 0;
 }
 
-// //下划线型转驼峰型
-// char *DownLine2Camelback(const char *str)
-// {
+//下划线型转驼峰型
+char *DownLine2Camelback(const char *src)
+{
+	// char * hungary_test = "aaa_bb_ccc_ddd";
+	if(src == NULL)
+	{
+		printf("src == NULL\n");
+		return NULL;
+	}
+	int index = 0;
+	int length = strlen(src);
+	char *dst = (char *)malloc(length * 2);
+	memset(dst, 0, length * 2);
 
-// }
+	for(int i=0; i < length; i++)
+	{
+		char c = src[i];
+		if(c == '_')
+		{
+			i ++;
+			c = src[i] - 32;
+		}
+		dst[index] = c;
+		index ++;
+	}
+	dst[index] = '\0';
+	return dst;
+}
 
-// //下划线型转驼峰增强型
-// int DownLine2CamelbackX(const char *src, char **dst)
-// {
+//下划线型转驼峰增强型
+int DownLine2CamelbackX(const char *src, char **dst)
+{
+	// char * hungary_test = "aaa_bbCccDdd";
+	if(src == NULL || dst == NULL)
+	{
+		printf("src == NULL || dst == NULL\n");
+		return -1;
+	}
+	int index = 0;
+	int length = strlen(src);
+	char *dstx = *dst;
+	for(int i=0; i < length; i++)
+	{
+		char c = src[i];
+		if(c == '_')
+		{
+			i ++;
+			c = src[i] - 32;
+		}
+		dstx[index] = c;
+		index ++;
+	}
+	dstx[index] = '\0';
+	return 0;
+}
 
-// }
+//下划线型转帕斯卡型
+char *DownLine2Pascal(const char *src)
+{
+	// char * hungary_test = "aaa_bb_ccc_ddd";
+	if(src == NULL)
+	{
+		printf("src == NULL\n");
+		return NULL;
+	}
+	int index = 0;
+	int length = strlen(src);
+	char *dst = (char *)malloc(length * 2);
+	memset(dst, 0, length * 2);
 
-// //下划线型转帕斯卡型
-// char *DownLine2Pascal(const char *str)
-// {
+	dst[index] = src[index] - 32;
+	index ++;
+	for(int i = 1; i < length; i++)
+	{
+		char c = src[i];
+		if(c == '_')
+		{
+			i ++;
+			c = src[i] - 32;
+		}
+		dst[index] = c;
+		index ++;
+	}
+	dst[index] = '\0';
+	return dst;
+}
 
-// }
+//下划线型转帕斯卡增强型
+int DownLine2PascalX(const char *src, char **dst)
+{
+	// char * hungary_test = "aaa_bbCccDdd";
+	if(src == NULL || dst == NULL)
+	{
+		printf("src == NULL || dst == NULL\n");
+		return -1;
+	}
+	int index = 0;
+	int length = strlen(src);
+	char *dstx = *dst;
 
-// //下划线型转帕斯卡增强型
-// int DownLine2PascalX(const char *src, char **dst)
-// {
+	dstx[index] = src[index] - 32;
+	index ++;
 
-// }
+	for(int i = 1; i < length; i++)
+	{
+		char c = src[i];
+		if(c == '_')
+		{
+			i ++;
+			c = src[i] - 32;
+		}
+		dstx[index] = c;
+		index ++;
+	}
+	dstx[index] = '\0';
+	return 0;
+}
 
 // //驼峰型转匈牙利型
 // char *Camelback2Hungary(const char *str)
