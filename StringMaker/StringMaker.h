@@ -30,17 +30,17 @@ char *DownLine2Hungary(const char *str);
 //下划线型转匈牙利增强型
 int DownLine2HungaryX(const char *src, char **dst);
 
-// //下划线型转驼峰型
-// char *DownLine2Camelback(const char *str);
+//下划线型转驼峰型
+char *DownLine2Camelback(const char *str);
 
-// //下划线型转驼峰增强型
-// int DownLine2CamelbackX(const char *src, char **dst);
+//下划线型转驼峰增强型
+int DownLine2CamelbackX(const char *src, char **dst);
 
-// //下划线型转帕斯卡型
-// char *DownLine2Pascal(const char *str);
+//下划线型转帕斯卡型
+char *DownLine2Pascal(const char *str);
 
-// //下划线型转帕斯卡增强型
-// int DownLine2PascalX(const char *src, char **dst);
+//下划线型转帕斯卡增强型
+int DownLine2PascalX(const char *src, char **dst);
 
 // //驼峰型转匈牙利型
 // char *Camelback2Hungary(const char *str);
