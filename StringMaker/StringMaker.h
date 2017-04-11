@@ -60,22 +60,22 @@ char *Camelback2Pascal(const char *str);
 //驼峰型转帕斯卡增强型
 int Camelback2PascalX(const char *src, char **dst);
 
-// //帕斯卡型转匈牙利型
-// char *Pascal2Hungary(const char *str);
+//帕斯卡型转匈牙利型
+char *Pascal2Hungary(const char *str);
 
-// //帕斯卡型转匈牙利增强型
-// int Pascal2HungaryX(const char *src, char **dst);
+//帕斯卡型转匈牙利增强型
+int Pascal2HungaryX(const char *src, char **dst);
 
-// //帕斯卡型转下划线型
-// char *Pascal2DownLine(const char *str);
+//帕斯卡型转下划线型
+char *Pascal2DownLine(const char *str);
 
-// //帕斯卡型转下划线增强型
-// int Pascal2DownLineX(const char *src, char **dst);
+//帕斯卡型转下划线增强型
+int Pascal2DownLineX(const char *src, char **dst);
 
-// //帕斯卡型转驼峰型
-// char *Pascal2Camelback(const char *str);
+//帕斯卡型转驼峰型
+char *Pascal2Camelback(const char *str);
 
-// //帕斯卡型转驼峰增强型
-// int Pascal2CamelbackX(const char *src, char **dst);
+//帕斯卡型转驼峰增强型
+int Pascal2CamelbackX(const char *src, char **dst);
 
 #endif
