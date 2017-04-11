@@ -302,35 +302,104 @@ int test18()
 	else	return 0;
 }
 
-// int test19()
-// {
+int test19()
+{
+	char * camelback_test = "AaaBbCccDdd";
+	char * anticipated_test = "aaa_bbCccDdd";
+	printf("Input is %s\n", camelback_test);
+	char * result = Pascal2Hungary(camelback_test);
+	printf("result is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		// 缺陷： 函数内部回开辟内存空间  必须在函数外部进行释放
+		free(result);
+		return 1;
+	}	
+	else	return 0;
+}
 
-// }
+int test20()
+{
+	char * camelback_test = "AaaBbCccDdd";
+	char * anticipated_test = "aaa_bbCccDdd";
+	printf("Input is %s\n", camelback_test);
+	char * result = (char *)malloc(strlen(camelback_test) * 2);
+	memset(result, 0, strlen(camelback_test) * 2);
 
-// int test20()
-// {
+	Pascal2HungaryX(camelback_test, &result);
 
-// }
+	printf("result is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		free(result);
+		return 1;
+	}
+	else	return 0;
+}
 
-// int test21()
-// {
+int test21()
+{
+	char * camelback_test = "AaaBbCccDdd";
+	char * anticipated_test = "aaa_bb_ccc_ddd";
+	printf("Input is %s\n", camelback_test);
+	char * result = Pascal2DownLine(camelback_test);
+	printf("result is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		// 缺陷： 函数内部回开辟内存空间  必须在函数外部进行释放
+		free(result);
+		return 1;
+	}	
+	else	return 0;
+}
 
-// }
+int test22()
+{
+	char * camelback_test = "AaaBbCccDdd";
+	char * anticipated_test = "aaa_bb_ccc_ddd";
+	printf("Input is %s\n", camelback_test);
+	char * result = (char *)malloc(strlen(camelback_test) * 2);
+	memset(result, 0, strlen(camelback_test) * 2);
 
-// int test22()
-// {
+	Pascal2DownLineX(camelback_test, &result);
 
-// }
+	printf("result is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		free(result);
+		return 1;
+	}
+	else	return 0;
+}
 
-// int test23()
-// {
+int test23()
+{
+	char * camelback_test = "AaaBbCccDdd";
+	char * anticipated_test = "aaaBbCccDdd";
+	printf("Input is %s\n", camelback_test);
+	char * result = Pascal2Camelback(camelback_test);
+	printf("result is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		// 缺陷： 函数内部回开辟内存空间  必须在函数外部进行释放
+		free(result);
+		return 1;
+	}	
+	else	return 0;
+}
 
-// }
+int test24()
+{
+	char * camelback_test = "AaaBbCccDdd";
+	char * anticipated_test = "aaaBbCccDdd";
+	printf("Input is %s\n", camelback_test);
+	char * result = (char *)malloc(strlen(camelback_test) * 2);
+	memset(result, 0, strlen(camelback_test) * 2);
 
-// int test24()
-// {
+	Pascal2CamelbackX(camelback_test, &result);
 
-// }
+	printf("result is %s \n", result);
+	if(strcmp(anticipated_test, result) == 0){
+		free(result);
+		return 1;
+	}
+	else	return 0;
+}
 
 int main()
 {
@@ -352,11 +421,11 @@ int main()
 	if(test16()) printf("test16 successed\n********************\n\n");
 	if(test17()) printf("test17 successed\n********************\n\n");
 	if(test18()) printf("test18 successed\n********************\n\n");
-	// if(test19()) printf("test19 successed\n********************\n\n");
-	// if(test20()) printf("test20 successed\n********************\n\n");
-	// if(test21()) printf("test21 successed\n********************\n\n");
-	// if(test22()) printf("test22 successed\n********************\n\n");
-	// if(test23()) printf("test23 successed\n********************\n\n");
-	// if(test24()) printf("test24 successed\n********************\n\n");
+	if(test19()) printf("test19 successed\n********************\n\n");
+	if(test20()) printf("test20 successed\n********************\n\n");
+	if(test21()) printf("test21 successed\n********************\n\n");
+	if(test22()) printf("test22 successed\n********************\n\n");
+	if(test23()) printf("test23 successed\n********************\n\n");
+	if(test24()) printf("test24 successed\n********************\n\n");
 	return 0;
 }
