@@ -695,7 +695,7 @@ int Pascal2CamelbackX(const char *src, char **dst)
 	int index = 0;
 	int length = strlen(src);
 	char *dstx = *dst;
-
+	
 	dstx[index] = src[index] + 32;
 	index ++;
 

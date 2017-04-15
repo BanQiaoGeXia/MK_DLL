@@ -403,15 +403,15 @@ int test24()
 
 int main()
 {
-	if(test1()) printf("test1 successed\n********************\n\n");
-	if(test2()) printf("test2 successed\n********************\n\n");
-	if(test3()) printf("test3 successed\n********************\n\n");
-	if(test4()) printf("test4 successed\n********************\n\n");
-	if(test5()) printf("test5 successed\n********************\n\n");
-	if(test6()) printf("test6 successed\n********************\n\n");
-	if(test7()) printf("test7 successed\n********************\n\n");
-	if(test8()) printf("test8 successed\n********************\n\n");
-	if(test9()) printf("test9 successed\n********************\n\n");
+	if(test1())  printf("test1  successed\n********************\n\n");
+	if(test2())  printf("test2  successed\n********************\n\n");
+	if(test3())  printf("test3  successed\n********************\n\n");
+	if(test4())  printf("test4  successed\n********************\n\n");
+	if(test5())  printf("test5  successed\n********************\n\n");
+	if(test6())  printf("test6  successed\n********************\n\n");
+	if(test7())  printf("test7  successed\n********************\n\n");
+	if(test8())  printf("test8  successed\n********************\n\n");
+	if(test9())  printf("test9  successed\n********************\n\n");
 	if(test10()) printf("test10 successed\n********************\n\n");
 	if(test11()) printf("test11 successed\n********************\n\n");
 	if(test12()) printf("test12 successed\n********************\n\n");
